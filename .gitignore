@@ -1,0 +1,6 @@
+# Project exclude paths
+/target
+/.idea
+org.exemple.remindme.server.iml
+remindme.server.iml
+org.exemple.remindme.server.remindme.rar
