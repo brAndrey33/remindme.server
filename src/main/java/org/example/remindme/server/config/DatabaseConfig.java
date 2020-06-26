@@ -36,7 +36,8 @@ public class DatabaseConfig {
         em.setPackagesToScan(env.getRequiredProperty("db.entity.package"));
 
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        em.setJpaProperties(getHipernateProparties());
+        em.setJpaProperties(getHibernateProparties());
+
         return em;
     }
 
@@ -50,12 +51,12 @@ public class DatabaseConfig {
         ds.setUsername(env.getRequiredProperty("db.username"));
         ds.setPassword(env.getRequiredProperty("db.password"));
 
-        ds.setInitialSize(Integer.valueOf(env.getRequiredProperty("db.initialSize")));
-        ds.setMinIdle(Integer.valueOf(env.getRequiredProperty("db.minIdle")));
-        ds.setMaxIdle(Integer.valueOf(env.getRequiredProperty("db.maxIdle")));
-        ds.setTimeBetweenEvictionRunsMillis(Integer.valueOf(env.getRequiredProperty("db.timeBetweenEvictionRunsMillis")));
-        ds.setMinEvictableIdleTimeMillis(Integer.valueOf(env.getRequiredProperty("db.minEvictableIdleTimeMillis")));
-        ds.setTestOnBorrow(Boolean.valueOf(env.getRequiredProperty("db.testOnBorrow")));
+        ds.setInitialSize(Integer.parseInt(env.getRequiredProperty("db.initialSize")));
+        ds.setMinIdle(Integer.parseInt(env.getRequiredProperty("db.minIdle")));
+        ds.setMaxIdle(Integer.parseInt(env.getRequiredProperty("db.maxIdle")));
+        ds.setTimeBetweenEvictionRunsMillis(Integer.parseInt(env.getRequiredProperty("db.timeBetweenEvictionRunsMillis")));
+        ds.setMinEvictableIdleTimeMillis(Integer.parseInt(env.getRequiredProperty("db.minEvictableIdleTimeMillis")));
+        ds.setTestOnBorrow(Boolean.parseBoolean(env.getRequiredProperty("db.testOnBorrow")));
         ds.setValidationQuery(env.getRequiredProperty("db.validationQuery"));
 
         return ds;
@@ -70,15 +71,15 @@ public class DatabaseConfig {
     }
 
 
-    private Properties getHipernateProparties() {
+    private Properties getHibernateProparties() {
         try{
             Properties properties = new Properties();
-            InputStream is = getClass().getClassLoader().getResourceAsStream("hipernate.proparties");
+            InputStream is = getClass().getClassLoader().getResourceAsStream("hibernate.proparties");
             properties.load(is);
            return properties;
         }
         catch (IOException e){
-            throw new IllegalArgumentException("Can't find 'hipernate.proparties' is classpath",e );
+            throw new IllegalArgumentException("Can't find 'hibernate.proparties' is classpath",e );
         }
 
     }

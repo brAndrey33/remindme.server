@@ -7,12 +7,11 @@
     <artifactId>remindme.server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <spring-core.version>5.2.7.RELEASE</spring-core.version>
-        <spring-webmvc.version>5.2.7.RELEASE</spring-webmvc.version>
+        <spring.version>5.2.0.RELEASE</spring.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <spring-data-jpa.version>2.3.1.RELEASE</spring-data-jpa.version>
-        <hibernate-entitymanager.version>5.4.17.Final</hibernate-entitymanager.version>
-        <postgresql.version>9.4-1206-jdbc42</postgresql.version>
+        <spring-data-jpa.version>2.2.5.RELEASE</spring-data-jpa.version>
+        <hibernate-entitymanager.version>5.4.11.Final</hibernate-entitymanager.version>
+        <postgresql.version>9.4-1206-jdbc4</postgresql.version>
         <commons-dbcp2.version>2.7.0</commons-dbcp2.version>
     </properties>
 
@@ -23,7 +22,7 @@
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
-        <version>${spring-core.version}</version>
+        <version>${spring.version}</version>
     </dependency>
 
     <!-- Web -->
@@ -31,7 +30,7 @@
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
-        <version>${spring-webmvc.version}</version>
+        <version>${spring.version}</version>
     </dependency>
     <dependency>
         <groupId>javax.servlet</groupId>
@@ -73,8 +72,6 @@
         <artifactId>commons-dbcp2</artifactId>
         <version>${commons-dbcp2.version}</version>
     </dependency>
-
-
 
 </dependencies>
 

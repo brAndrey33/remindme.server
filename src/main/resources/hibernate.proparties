@@ -1,0 +1,5 @@
+
+hibernate.dialet = org.hibernate.dialect.PostgreSQL94Dialectialect
+hibernate.show_sql = true
+
+hibernate.hbm2ddl.auto = create

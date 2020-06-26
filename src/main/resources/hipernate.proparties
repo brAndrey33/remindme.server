@@ -1,4 +1,0 @@
-hipernate.dialet = org.hibernate.dialect.PostgreSQL9Dialect
-hipernate.show_sql = true
-
-hipernate.hbm2ddl.auto = create
